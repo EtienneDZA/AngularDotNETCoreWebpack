@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: path.join(__dirname, 'angularApp/styles'),
+                include: path.join(__dirname, 'App/styles'),
                 use: [
                     'style-loader',
                     'css-loader',
@@ -40,7 +40,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: path.join(__dirname, 'angularApp/styles'),
+                exclude: path.join(__dirname, 'App/styles'),
                 use: [
                     'raw-loader',
                     'sass-loader'

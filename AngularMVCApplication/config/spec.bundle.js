@@ -18,7 +18,7 @@ testing.TestBed.initTestEnvironment(
     browser.platformBrowserDynamicTesting()
 );
 
-var testContext = require.context('../angularApp', true, /\.spec\.ts/);
+var testContext = require.context('../App', true, /\.spec\.ts/);
 
 function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);

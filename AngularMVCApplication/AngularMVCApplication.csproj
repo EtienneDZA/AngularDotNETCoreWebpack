@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="App\home\home.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="App\polyfills.ts" />
   </ItemGroup>
 
@@ -28,10 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="App\app.component.ts" />
-    <TypeScriptCompile Include="App\app.module.ts" />
-    <TypeScriptCompile Include="App\app-routing.module.ts" />
-    <TypeScriptCompile Include="App\home\home.component.ts" />
+    <TypeScriptCompile Include="App\app\components\app\app.component.ts" />
+    <TypeScriptCompile Include="App\app\app.module.ts" />
+    <TypeScriptCompile Include="App\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="App\app\components\home\home.component.ts" />
     <TypeScriptCompile Include="App\main.ts" />
   </ItemGroup>
 

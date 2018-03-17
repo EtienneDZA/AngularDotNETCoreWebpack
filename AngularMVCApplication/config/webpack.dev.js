@@ -10,8 +10,6 @@ const helpers = require('./webpack.helpers');
 
 const ROOT = path.resolve(__dirname, '..');
 
-console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
-
 module.exports = {
 
 	devtool: 'source-map',
@@ -20,7 +18,7 @@ module.exports = {
 	},
 	entry: {
 		'polyfills': './App/polyfills.ts',
-		//'vendor': './App/vendor.ts',
+		'vendor': './App/vendor.ts',
 		'app': './App/main.ts'
 	},
 
@@ -96,7 +94,7 @@ module.exports = {
 		exprContextCritical: false
 	},
 	plugins: [
-		//new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'polyfills'] }),
+		new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'polyfills'] }),
 
 		new CleanWebpackPlugin(
 			[

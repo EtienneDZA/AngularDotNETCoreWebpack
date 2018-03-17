@@ -14,9 +14,9 @@ console.log('@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@');
 module.exports = {
 
     entry: {
-        'polyfills': './angularApp/polyfills.ts',
-        'vendor': './angularApp/vendor.ts',
-        'app': './angularApp/main-aot.ts'
+        'polyfills': './App/polyfills.ts',
+        'vendor': './App/vendor.ts',
+        'app': './App/main-aot.ts'
     },
 
     output: {
@@ -59,7 +59,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: path.join(ROOT, 'angularApp/styles'),
+                include: path.join(ROOT, 'App/styles'),
                 use: [
                     'style-loader',
                     'css-loader',
@@ -68,7 +68,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: path.join(ROOT, 'angularApp/styles'),
+                exclude: path.join(ROOT, 'App/styles'),
                 use: [
                     'raw-loader',
                     'sass-loader'
@@ -87,7 +87,7 @@ module.exports = {
         //}),
         new webpackTools.AngularCompilerPlugin({
             tsConfigPath: './tsconfig-aot.json'
-            // entryModule: './angularApp/app/app.module#AppModule'
+            // entryModule: './App/app/app.module#AppModule'
         }),
 
         new CleanWebpackPlugin(
@@ -114,11 +114,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: '../Views/Shared/_Layout.cshtml',
             inject: 'body',
-            template: 'angularApp/_Layout.cshtml'
+            template: 'App/_Layout.cshtml'
         }),
 
         new CopyWebpackPlugin([
-            { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
+            { from: './App/images/*.*', to: 'assets/', flatten: true }
         ])
     ]
 
