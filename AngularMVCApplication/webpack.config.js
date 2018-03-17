@@ -1,129 +1,129 @@
-﻿///// <binding ProjectOpened='Run - Development' />
+﻿/// <binding ProjectOpened='Run - Development' />
 
-//module.exports = function (env) {
-//	return require(`./config/webpack.${env}.js`)
-//}
-
-
+module.exports = function (env) {
+	return require(`./config/webpack.${env}.js`)
+}
 
 
-const path = require('path');
 
-const webpack = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const path = require('path');
 
-const helpers = require('./webpack.helpers');
+//const webpack = require('webpack');
 
-const ROOT = path.resolve(__dirname, '..');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const CopyWebpackPlugin = require('copy-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
+//const helpers = require('./webpack.helpers');
 
-module.exports = {
+//const ROOT = path.resolve(__dirname, '..');
 
-	devtool: 'source-map',
-	performance: {
-		hints: false
-	},
-	entry: {
-		'polyfills': './App/polyfills.ts',
-		//'vendor': './App/vendor.ts',
-		'app': './App/main.ts'
-	},
+//console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
 
-	output: {
-		path: ROOT + '/wwwroot/',
-		filename: 'dist/[name].bundle.js',
-		chunkFilename: 'dist/[id].chunk.js',
-		publicPath: '/'
-	},
+//module.exports = {
 
-	resolve: {
-		extensions: ['.ts', '.js', '.json']
-	},
+//	devtool: 'source-map',
+//	performance: {
+//		hints: false
+//	},
+//	entry: {
+//		'polyfills': './App/polyfills.ts',
+//		//'vendor': './App/vendor.ts',
+//		'app': './App/main.ts'
+//	},
 
-	devServer: {
-		historyApiFallback: true,
-		contentBase: path.join(ROOT, '/wwwroot/'),
-		watchOptions: {
-			aggregateTimeout: 300,
-			poll: 1000
-		}
-	},
+//	output: {
+//		path: ROOT + '/wwwroot/',
+//		filename: 'dist/[name].bundle.js',
+//		chunkFilename: 'dist/[id].chunk.js',
+//		publicPath: '/'
+//	},
 
-	module: {
-		rules: [
-			{
-				test: /\.ts$/,
-				use: [
-					'awesome-typescript-loader',
-					'angular-router-loader',
-					'angular2-template-loader',
-					'source-map-loader',
-					'tslint-loader'
-				]
-			},
-			{
-				test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-				use: 'file-loader?name=assets/[name]-[hash:6].[ext]'
-			},
-			{
-				test: /favicon.ico$/,
-				use: 'file-loader?name=/[name].[ext]'
-			},
-			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
-			},
-			{
-				test: /\.scss$/,
-				include: path.join(ROOT, 'App/styles'),
-				use: [
-					'style-loader',
-					'css-loader',
-					'sass-loader'
-				]
-			},
-			{
-				test: /\.scss$/,
-				exclude: path.join(ROOT, 'App/styles'),
-				use: [
-					'raw-loader',
-					'sass-loader'
-				]
-			},
-			{
-				test: /\.html$/,
-				use: 'raw-loader'
-			}
-		],
-		exprContextCritical: false
-	},
-	plugins: [
-		//new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'polyfills'] }),
+//	resolve: {
+//		extensions: ['.ts', '.js', '.json']
+//	},
 
-		new CleanWebpackPlugin(
-			[
-				'./wwwroot/dist',
-				//'./wwwroot/assets'
-			],
-			{ root: ROOT }
-		),
+//	devServer: {
+//		historyApiFallback: true,
+//		contentBase: path.join(ROOT, '/wwwroot/'),
+//		watchOptions: {
+//			aggregateTimeout: 300,
+//			poll: 1000
+//		}
+//	},
 
-		new HtmlWebpackPlugin({
-			filename: '../Views/Shared/_Layout.cshtml',
-			inject: 'body',
-			template: 'App/_Layout.cshtml'
-		}),
+//	module: {
+//		rules: [
+//			{
+//				test: /\.ts$/,
+//				use: [
+//					'awesome-typescript-loader',
+//					'angular-router-loader',
+//					'angular2-template-loader',
+//					'source-map-loader',
+//					'tslint-loader'
+//				]
+//			},
+//			{
+//				test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
+//				use: 'file-loader?name=assets/[name]-[hash:6].[ext]'
+//			},
+//			{
+//				test: /favicon.ico$/,
+//				use: 'file-loader?name=/[name].[ext]'
+//			},
+//			{
+//				test: /\.css$/,
+//				use: [
+//					'style-loader',
+//					'css-loader'
+//				]
+//			},
+//			{
+//				test: /\.scss$/,
+//				include: path.join(ROOT, 'App/styles'),
+//				use: [
+//					'style-loader',
+//					'css-loader',
+//					'sass-loader'
+//				]
+//			},
+//			{
+//				test: /\.scss$/,
+//				exclude: path.join(ROOT, 'App/styles'),
+//				use: [
+//					'raw-loader',
+//					'sass-loader'
+//				]
+//			},
+//			{
+//				test: /\.html$/,
+//				use: 'raw-loader'
+//			}
+//		],
+//		exprContextCritical: false
+//	},
+//	plugins: [
+//		//new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'polyfills'] }),
 
-		//new CopyWebpackPlugin([
-		//	{ from: './App/images/*.*', to: 'assets/', flatten: true }
-		//])
-	]
+//		new CleanWebpackPlugin(
+//			[
+//				'./wwwroot/dist',
+//				//'./wwwroot/assets'
+//			],
+//			{ root: ROOT }
+//		),
 
-};
+//		new HtmlWebpackPlugin({
+//			filename: '../Views/Shared/_Layout.cshtml',
+//			inject: 'body',
+//			template: 'App/_Layout.cshtml'
+//		}),
+
+//		//new CopyWebpackPlugin([
+//		//	{ from: './App/images/*.*', to: 'assets/', flatten: true }
+//		//])
+//	]
+
+//};
