@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularMVCApplication", "AngularMVCApplication\AngularMVCApplication.csproj", "{AAC22FB1-DE01-4FCC-BE26-572F8E0CFA83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularMVCApplication", "AngularMVCApplication\AngularMVCApplication.csproj", "{AAC22FB1-DE01-4FCC-BE26-572F8E0CFA83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminApplication.Data", "AdminApplication.Data\AdminApplication.Data.csproj", "{63BABD7B-A058-4CC9-97A0-FEE830EED747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{FD6884AA-2363-4AF1-B581-FA7D62D0245A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{AAC22FB1-DE01-4FCC-BE26-572F8E0CFA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC22FB1-DE01-4FCC-BE26-572F8E0CFA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC22FB1-DE01-4FCC-BE26-572F8E0CFA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BABD7B-A058-4CC9-97A0-FEE830EED747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BABD7B-A058-4CC9-97A0-FEE830EED747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BABD7B-A058-4CC9-97A0-FEE830EED747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BABD7B-A058-4CC9-97A0-FEE830EED747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6884AA-2363-4AF1-B581-FA7D62D0245A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6884AA-2363-4AF1-B581-FA7D62D0245A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6884AA-2363-4AF1-B581-FA7D62D0245A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6884AA-2363-4AF1-B581-FA7D62D0245A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

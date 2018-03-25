@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AdminApplication;
+using AdminApplication.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -23,29 +27,43 @@ namespace AngularMVCApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+			//services.AddDbContext<AdminAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AdminAppDbContext")));
+
+			//services.AddIdentity<ApplicationUser, IdentityRole>()
+			//	.AddEntityFrameworkStores<AdminAppDbContext>()
+			//	.AddDefaultTokenProviders();
+
+			//// Add application services.
+			//services.AddTransient<IEmailSender, EmailSender>();
+
+			services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		{
 
-            app.UseMvc(routes =>
-		  {
-			  routes.MapRoute(
-				  name: "default",
-				  template: "{controller=Home}/{action=Index}/{id?}");
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
 
-			  routes.MapSpaFallbackRoute(
-				 name: "spa-fallback",
-				 defaults: new { controller = "Home", action = "Index" });
-		  })
-		  .UseStaticFiles()
-		  .UseDefaultFiles();
-        }
+			// Maps to default route named 'default' and the following template: '{controller=Home}/{action=Index}/{id?}'.
+			//app.UseMvcWithDefaultRoute();
+			//app.UseMvc(routes =>
+			//{
+			//	//routes.MapRoute(
+			//	//	name: "default",
+			//	//	template: "{controller=Home}/{action=Index}/{id?}");
+
+			//	routes.MapSpaFallbackRoute(
+			//		name: "spa-fallback",
+			//		defaults: new { controller = "Home", action = "Index" });
+			//})
+			app
+
+			.UseDefaultFiles()
+			.UseStaticFiles();
+		}
     }
 }
