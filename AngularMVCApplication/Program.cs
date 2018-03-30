@@ -21,7 +21,6 @@ namespace AngularMVCApplication
 				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
 				DbInitializer.Seed(userManager, roleManager).Wait();
-				//asdasd
 			}
 
 			host.Run();
