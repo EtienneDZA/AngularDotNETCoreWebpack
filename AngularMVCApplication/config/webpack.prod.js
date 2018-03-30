@@ -15,9 +15,9 @@ const ROOT = path.resolve(__dirname, '..');
 module.exports = webpackMerge(commonConfig, {
 
     //entry: {
-    //    'polyfills': './App/polyfills.ts',
-    //    'vendor': './App/vendor.ts',
-    //    'app': './App/main-aot.ts'
+    //    'polyfills': './src/polyfills.ts',
+    //    'vendor': './src/vendor.ts',
+    //    'app': './src/main-aot.ts'
     //},
 
     output: {
@@ -58,12 +58,12 @@ module.exports = webpackMerge(commonConfig, {
             },
             {
                 test: /\.scss$/,
-                include: path.join(ROOT, 'App/styles'),
+				include: path.join(ROOT, 'src/styles'),
                 use: ['style-loader','css-loader','sass-loader']
             },
             {
                 test: /\.scss$/,
-                exclude: path.join(ROOT, 'App/styles'),
+				exclude: path.join(ROOT, 'src/styles'),
                 use: ['raw-loader','sass-loader']
             },
             {
@@ -84,7 +84,7 @@ module.exports = webpackMerge(commonConfig, {
         //}),
         new webpackTools.AngularCompilerPlugin({
             tsConfigPath: './tsconfig-aot.json'
-            // entryModule: './App/app/app.module#AppModule'
+            // entryModule: './src/app/app.module#AppModule'
         }),
 
         new CleanWebpackPlugin(
@@ -116,11 +116,11 @@ module.exports = webpackMerge(commonConfig, {
         new HtmlWebpackPlugin({
             filename: '../Views/Shared/_Layout.cshtml',
             inject: 'body',
-		   template: 'App/_Layout.Template.cshtml'
+			template: 'src/_Layout.Template.cshtml'
         }),
 
         new CopyWebpackPlugin([
-            { from: './App/images/*.*', to: 'assets/', flatten: true }
+			{ from: './src/images/*.*', to: 'assets/', flatten: true }
         ])
     ]
 

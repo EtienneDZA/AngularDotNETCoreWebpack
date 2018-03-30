@@ -1,9 +1,9 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },

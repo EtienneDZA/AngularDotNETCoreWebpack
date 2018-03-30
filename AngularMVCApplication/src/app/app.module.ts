@@ -2,12 +2,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
 
-import { AppComponent } from "./components/app/app.component";
-import { HomeComponent } from "./components/home/home.component";
+import { AppComponent } from "./app/app.component";
+import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AdminComponent } from "./components/admin/admin.component";
-import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from "./admin/admin.component";
+import { NavMenuComponent } from './navmenu/navmenu.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
 	imports: [

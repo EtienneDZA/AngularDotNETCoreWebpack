@@ -1,18 +1,5 @@
 webpackJsonp([1],{
 
-/***/ "./App/polyfills.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__("./node_modules/core-js/es7/reflect.js");
-__webpack_require__("./node_modules/core-js/es6/reflect.js");
-__webpack_require__("./node_modules/zone.js/dist/zone.js");
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/es6/reflect.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5511,6 +5498,19 @@ Zone.__load_patch('PromiseRejectionEvent', function (global, Zone, api) {
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js")))
 
+/***/ }),
+
+/***/ "./src/polyfills.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__("./node_modules/core-js/es7/reflect.js");
+__webpack_require__("./node_modules/core-js/es6/reflect.js");
+__webpack_require__("./node_modules/zone.js/dist/zone.js");
+
+
 /***/ })
 
-},["./App/polyfills.ts"]);
+},["./src/polyfills.ts"]);

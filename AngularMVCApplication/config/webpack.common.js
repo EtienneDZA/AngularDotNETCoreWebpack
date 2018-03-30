@@ -9,9 +9,9 @@ const helpers = require('./webpack.helpers');
 
 module.exports = {
 	entry: {		
-		polyfills: './App/polyfills.ts',
-		vendor: './App/vendor.ts',
-		app: './App/main.ts',
+		polyfills: './src/polyfills.ts',
+		vendor: './src/vendor.ts',
+		app: './src/main.ts',
 	},
 
 	resolve: {

@@ -1,18 +1,5 @@
 webpackJsonp([0],{
 
-/***/ "./App/vendor.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__("./node_modules/jquery/src/jquery.js");
-__webpack_require__("./node_modules/bootstrap/less/bootstrap.less");
-__webpack_require__("./favicon.ico");
-
-
-/***/ }),
-
 /***/ "./favicon.ico":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22229,6 +22216,19 @@ return jQuery;
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
+/***/ }),
+
+/***/ "./src/vendor.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__("./node_modules/jquery/src/jquery.js");
+__webpack_require__("./node_modules/bootstrap/less/bootstrap.less");
+__webpack_require__("./favicon.ico");
+
+
 /***/ })
 
-},["./App/vendor.ts"]);
+},["./src/vendor.ts"]);

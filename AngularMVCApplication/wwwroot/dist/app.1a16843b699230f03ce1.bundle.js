@@ -1,332 +1,5 @@
 webpackJsonp([2],{
 
-/***/ "./App/app/app-routing.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-const router_1 = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-const home_component_1 = __webpack_require__("./App/app/components/home/home.component.ts");
-const admin_component_1 = __webpack_require__("./App/app/components/admin/admin.component.ts");
-const login_component_1 = __webpack_require__("./App/app/components/login/login.component.ts");
-exports.routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: home_component_1.HomeComponent },
-    { path: 'admin', component: admin_component_1.AdminComponent },
-    { path: 'login', component: login_component_1.LoginComponent },
-    { path: '**', redirectTo: '' }
-];
-let AppRoutingModule = class AppRoutingModule {
-};
-AppRoutingModule = __decorate([
-    core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(exports.routes, { enableTracing: true })],
-        exports: [router_1.RouterModule]
-    })
-], AppRoutingModule);
-exports.AppRoutingModule = AppRoutingModule;
-
-
-/***/ }),
-
-/***/ "./App/app/app.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-const platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-const http_1 = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-const app_component_1 = __webpack_require__("./App/app/components/app/app.component.ts");
-const home_component_1 = __webpack_require__("./App/app/components/home/home.component.ts");
-const app_routing_module_1 = __webpack_require__("./App/app/app-routing.module.ts");
-const admin_component_1 = __webpack_require__("./App/app/components/admin/admin.component.ts");
-const navmenu_component_1 = __webpack_require__("./App/app/components/navmenu/navmenu.component.ts");
-const login_component_1 = __webpack_require__("./App/app/components/login/login.component.ts");
-let AppModule = class AppModule {
-};
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            http_1.HttpModule,
-            app_routing_module_1.AppRoutingModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            home_component_1.HomeComponent,
-            admin_component_1.AdminComponent,
-            navmenu_component_1.NavMenuComponent,
-            login_component_1.LoginComponent
-        ],
-        bootstrap: [app_component_1.AppComponent],
-        providers: []
-    })
-], AppModule);
-exports.AppModule = AppModule;
-
-
-/***/ }),
-
-/***/ "./App/app/components/admin/admin.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<h1>This is the admin component</h1>"
-
-/***/ }),
-
-/***/ "./App/app/components/admin/admin.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-let AdminComponent = class AdminComponent {
-    ngOnInit() {
-    }
-};
-AdminComponent = __decorate([
-    core_1.Component({
-        selector: 'admin',
-        template: __webpack_require__("./App/app/components/admin/admin.component.html")
-    })
-], AdminComponent);
-exports.AdminComponent = AdminComponent;
-
-
-/***/ }),
-
-/***/ "./App/app/components/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./App/app/components/app/app.component.css");
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ "./App/app/components/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\r\n\t<div class='row'>\r\n\t\t<div class='col-sm-3'>\r\n\t\t\t<nav-menu></nav-menu>\r\n\t\t</div>\r\n\t\t<div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\t</div>\r\n</div>"
-
-/***/ }),
-
-/***/ "./App/app/components/app/app.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-let AppComponent = class AppComponent {
-    ngOnInit() {
-    }
-};
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app',
-        template: __webpack_require__("./App/app/components/app/app.component.html"),
-        styles: [__webpack_require__("./App/app/components/app/app.component.css")]
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-
-
-/***/ }),
-
-/***/ "./App/app/components/home/home.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<!--<h1>This is the home component</h1>-->\r\n\r\n<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n\t<li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n\t<li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n\t<li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n\t<li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n\t<li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n\t<li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n\t<li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n\t<li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected into the page.</li>\r\n\t<li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n"
-
-/***/ }),
-
-/***/ "./App/app/components/home/home.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-let HomeComponent = class HomeComponent {
-    constructor() {
-        console.log('HomeComponent -> constructor');
-    }
-    ngOnInit() {
-        console.log('HomeComponent -> ngOnInit');
-    }
-};
-HomeComponent = __decorate([
-    core_1.Component({
-        selector: 'home',
-        template: __webpack_require__("./App/app/components/home/home.component.html")
-    }),
-    __metadata("design:paramtypes", [])
-], HomeComponent);
-exports.HomeComponent = HomeComponent;
-
-
-/***/ }),
-
-/***/ "./App/app/components/login/login.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n\t<h2>Login</h2>\r\n\t<form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\r\n\t\t<div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !username.valid }\">\r\n\t\t\t<label for=\"username\">Username</label>\r\n\t\t\t<input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"model.username\" #username=\"ngModel\" required />\r\n\t\t\t<div *ngIf=\"f.submitted && !username.valid\" class=\"help-block\">Username is required</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\">\r\n\t\t\t<label for=\"password\">Password</label>\r\n\t\t\t<input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\" #password=\"ngModel\" required />\r\n\t\t\t<div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">Password is required</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group\">\r\n\t\t\t<button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n\t\t\t<img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n\t\t\t<a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\r\n\t\t</div>\r\n\t</form>\r\n</div>\n"
-
-/***/ }),
-
-/***/ "./App/app/components/login/login.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-let LoginComponent = class LoginComponent {
-    ngOnInit() {
-    }
-};
-LoginComponent = __decorate([
-    core_1.Component({
-        moduleId: module.i,
-        template: __webpack_require__("./App/app/components/login/login.component.html")
-    })
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-
-
-/***/ }),
-
-/***/ "./App/app/components/navmenu/navmenu.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./App/app/components/navmenu/navmenu.component.css");
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ "./App/app/components/navmenu/navmenu.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class='main-nav'>\r\n\t<div class='navbar navbar-inverse'>\r\n\t\t<div class='navbar-header'>\r\n\t\t\t<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n\t\t\t\t<span class='sr-only'>Toggle navigation</span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t</button>\r\n\t\t\t<a class='navbar-brand' routerLink=\"/home\">WebApplication1</a>\r\n\t\t</div>\r\n\t\t<div class='clearfix'></div>\r\n\t\t<div class='navbar-collapse collapse'>\r\n\t\t\t<ul class='nav navbar-nav'>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/home\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-home'></span> Home\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/admin\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-education'></span> Counter\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/fetch-data\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-th-list'></span> Fetch data\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
-
-/***/ }),
-
-/***/ "./App/app/components/navmenu/navmenu.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-let NavMenuComponent = class NavMenuComponent {
-};
-NavMenuComponent = __decorate([
-    core_1.Component({
-        selector: 'nav-menu',
-        template: __webpack_require__("./App/app/components/navmenu/navmenu.component.html"),
-        styles: [__webpack_require__("./App/app/components/navmenu/navmenu.component.css")]
-    })
-], NavMenuComponent);
-exports.NavMenuComponent = NavMenuComponent;
-
-
-/***/ }),
-
-/***/ "./App/app/styles/less/styles.less":
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--4-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./App/app/styles/less/styles.less");
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ "./App/main.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__("./App/polyfills.ts");
-__webpack_require__("./App/app/styles/less/styles.less");
-const platform_browser_dynamic_1 = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-const app_module_1 = __webpack_require__("./App/app/app.module.ts");
-const platform = platform_browser_dynamic_1.platformBrowserDynamic();
-platform.bootstrapModule(app_module_1.AppModule);
-
-
-/***/ }),
-
 /***/ "./node_modules/@angular/common/esm5/common.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -74363,21 +74036,21 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('5.0.0'
 
 /***/ }),
 
-/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./App/app/components/app/app.component.css":
+/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./src/app/app/app.component.css":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./App/app/components/navmenu/navmenu.component.css":
+/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./src/app/navmenu/navmenu.component.css":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--4-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./App/app/styles/less/styles.less":
+/***/ "./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--4-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/app/styles/less/styles.less":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -80037,6 +79710,333 @@ function __importDefault(mod) {
 }
 
 
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1>This is the admin component</h1>"
+
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+let AdminComponent = class AdminComponent {
+    ngOnInit() {
+    }
+};
+AdminComponent = __decorate([
+    core_1.Component({
+        selector: 'admin',
+        template: __webpack_require__("./src/app/admin/admin.component.html")
+    })
+], AdminComponent);
+exports.AdminComponent = AdminComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/app-routing.module.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+const router_1 = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+const home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
+const admin_component_1 = __webpack_require__("./src/app/admin/admin.component.ts");
+const login_component_1 = __webpack_require__("./src/app/login/login.component.ts");
+exports.routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: home_component_1.HomeComponent },
+    { path: 'admin', component: admin_component_1.AdminComponent },
+    { path: 'login', component: login_component_1.LoginComponent },
+    { path: '**', redirectTo: '' }
+];
+let AppRoutingModule = class AppRoutingModule {
+};
+AppRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forRoot(exports.routes, { enableTracing: true })],
+        exports: [router_1.RouterModule]
+    })
+], AppRoutingModule);
+exports.AppRoutingModule = AppRoutingModule;
+
+
+/***/ }),
+
+/***/ "./src/app/app.module.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+const platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+const http_1 = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+const app_component_1 = __webpack_require__("./src/app/app/app.component.ts");
+const home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
+const app_routing_module_1 = __webpack_require__("./src/app/app-routing.module.ts");
+const admin_component_1 = __webpack_require__("./src/app/admin/admin.component.ts");
+const navmenu_component_1 = __webpack_require__("./src/app/navmenu/navmenu.component.ts");
+const login_component_1 = __webpack_require__("./src/app/login/login.component.ts");
+let AppModule = class AppModule {
+};
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            http_1.HttpModule,
+            app_routing_module_1.AppRoutingModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            home_component_1.HomeComponent,
+            admin_component_1.AdminComponent,
+            navmenu_component_1.NavMenuComponent,
+            login_component_1.LoginComponent
+        ],
+        bootstrap: [app_component_1.AppComponent],
+        providers: []
+    })
+], AppModule);
+exports.AppModule = AppModule;
+
+
+/***/ }),
+
+/***/ "./src/app/app/app.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./src/app/app/app.component.css");
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ "./src/app/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\r\n\t<div class='row'>\r\n\t\t<div class='col-sm-3'>\r\n\t\t\t<nav-menu></nav-menu>\r\n\t\t</div>\r\n\t\t<div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\t</div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/app/app.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+let AppComponent = class AppComponent {
+    ngOnInit() {
+    }
+};
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'app',
+        template: __webpack_require__("./src/app/app/app.component.html"),
+        styles: [__webpack_require__("./src/app/app/app.component.css")]
+    })
+], AppComponent);
+exports.AppComponent = AppComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--<h1>This is the home component</h1>-->\r\n\r\n<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n\t<li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n\t<li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n\t<li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n\t<li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n\t<li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n\t<li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n\t<li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n\t<li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected into the page.</li>\r\n\t<li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+let HomeComponent = class HomeComponent {
+    constructor() {
+        console.log('HomeComponent -> constructor');
+    }
+    ngOnInit() {
+        console.log('HomeComponent -> ngOnInit');
+    }
+};
+HomeComponent = __decorate([
+    core_1.Component({
+        selector: 'home',
+        template: __webpack_require__("./src/app/home/home.component.html")
+    }),
+    __metadata("design:paramtypes", [])
+], HomeComponent);
+exports.HomeComponent = HomeComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n\t<h2>Login</h2>\r\n\t<form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\r\n\t\t<div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !username.valid }\">\r\n\t\t\t<label for=\"username\">Username</label>\r\n\t\t\t<input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"model.username\" #username=\"ngModel\" required />\r\n\t\t\t<div *ngIf=\"f.submitted && !username.valid\" class=\"help-block\">Username is required</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\">\r\n\t\t\t<label for=\"password\">Password</label>\r\n\t\t\t<input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\" #password=\"ngModel\" required />\r\n\t\t\t<div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">Password is required</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group\">\r\n\t\t\t<button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n\t\t\t<img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n\t\t\t<a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\r\n\t\t</div>\r\n\t</form>\r\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+let LoginComponent = class LoginComponent {
+    ngOnInit() {
+    }
+};
+LoginComponent = __decorate([
+    core_1.Component({
+        moduleId: module.i,
+        template: __webpack_require__("./src/app/login/login.component.html")
+    })
+], LoginComponent);
+exports.LoginComponent = LoginComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/navmenu/navmenu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--3-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./src/app/navmenu/navmenu.component.css");
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ "./src/app/navmenu/navmenu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class='main-nav'>\r\n\t<div class='navbar navbar-inverse'>\r\n\t\t<div class='navbar-header'>\r\n\t\t\t<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n\t\t\t\t<span class='sr-only'>Toggle navigation</span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t\t<span class='icon-bar'></span>\r\n\t\t\t</button>\r\n\t\t\t<a class='navbar-brand' routerLink=\"/home\">WebApplication1</a>\r\n\t\t</div>\r\n\t\t<div class='clearfix'></div>\r\n\t\t<div class='navbar-collapse collapse'>\r\n\t\t\t<ul class='nav navbar-nav'>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/home\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-home'></span> Home\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/admin\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-education'></span> Counter\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li routerLinkActive=\"link-active\">\r\n\t\t\t\t\t<a routerLink=\"/fetch-data\">\r\n\t\t\t\t\t\t<span class='glyphicon glyphicon-th-list'></span> Fetch data\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/navmenu/navmenu.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+let NavMenuComponent = class NavMenuComponent {
+};
+NavMenuComponent = __decorate([
+    core_1.Component({
+        selector: 'nav-menu',
+        template: __webpack_require__("./src/app/navmenu/navmenu.component.html"),
+        styles: [__webpack_require__("./src/app/navmenu/navmenu.component.css")]
+    })
+], NavMenuComponent);
+exports.NavMenuComponent = NavMenuComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/styles/less/styles.less":
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__("./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--4-1!./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/app/styles/less/styles.less");
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ "./src/main.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__("./src/polyfills.ts");
+__webpack_require__("./src/app/styles/less/styles.less");
+const platform_browser_dynamic_1 = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+const app_module_1 = __webpack_require__("./src/app/app.module.ts");
+const platform = platform_browser_dynamic_1.platformBrowserDynamic();
+platform.bootstrapModule(app_module_1.AppModule);
+
+
 /***/ })
 
-},["./App/main.ts"]);
+},["./src/main.ts"]);

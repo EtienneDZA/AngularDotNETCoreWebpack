@@ -98,14 +98,14 @@ module.exports = webpackMerge(commonConfig, {
 		new HtmlWebpackPlugin({
 			filename: '../Views/Shared/_Layout.cshtml',
 			inject: 'body',
-			template: 'App/_Layout.Template.cshtml'
+			template: 'src/_Layout.Template.cshtml'
 		}),
 
 		// Uses babel-minify-webpack-plugin for minification
 		//new MinifyPlugin ()
 
 		//new CopyWebpackPlugin([
-		//	{ from: './App/images/*.*', to: 'assets/', flatten: true }
+		//	{ from: './src/images/*.*', to: 'assets/', flatten: true }
 		//])
 	]
 
