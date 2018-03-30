@@ -6,7 +6,12 @@
 
   <ItemGroup>
     <None Remove="App\app\components\admin\admin.component.ts" />
+    <None Remove="App\app\shared\services\auth-service.ts" />
     <None Remove="App\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App\app\shared\services\auth-service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+	<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+	<DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AdminApplication.Data\AdminApplication.Data.csproj" />
   </ItemGroup>
 
@@ -46,6 +56,12 @@
     <Content Update="App\_Layout.Template.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App\app\shared\guards\" />
+    <Folder Include="Data\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
