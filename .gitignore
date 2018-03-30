@@ -261,4 +261,4 @@ __pycache__/
 *.pyc
 
 # wwwroot folder
-**/wwwroot/assets
+**/wwwroot/*
