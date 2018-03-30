@@ -33,6 +33,7 @@ namespace AdminApplication.Data
 				await userManager.CreateAsync(user);
 				await userManager.AddToRoleAsync(user, "Administrator");
 			}
+			//test
 		}
 	}
 }
