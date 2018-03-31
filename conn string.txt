@@ -1,0 +1,6 @@
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+MSSQLSERVER
+
+SQL Server 201x Express
+User:  sa
+Password: Password123
