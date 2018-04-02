@@ -5,9 +5,11 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from "./auth-guard.service";
+
 export const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
-	{ path: 'home', component: HomeComponent },
+	{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
 	{ path: 'admin', component: AdminComponent },
 	{ path: 'login', component: LoginComponent },
     { path: '**', redirectTo: '' }
@@ -18,6 +20,7 @@ export const routes: Routes = [
 		routes,
 		{ enableTracing: true }
 	)],
+	providers: [AuthGuard],
 	exports: [RouterModule]
 })
 
