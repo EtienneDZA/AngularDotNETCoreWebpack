@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="e2e\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

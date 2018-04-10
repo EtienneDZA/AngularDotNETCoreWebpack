@@ -3,25 +3,42 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Rx";
 import { HttpClient } from "@angular/common/http"
 import { fromPromise } from 'rxjs/observable/fromPromise';
+import { Router } from "@angular/router";
+import "rxjs/Rx";
 
 @Injectable()
-export class AuthService {
+export class AuthenticationService {
 
-	constructor(private http: HttpClient) {
-
+	constructor(private http: HttpClient, private router: Router) {
 	}
 
-	public login() {
-		var observable = this.http.post("api/users/login", { username: "admin@korbitec.com", password: "P@ssw0rd" });
-		observable
-		//	.switchMap((event) => event.)
-			.subscribe();
-		this.loggedIn = true;
+	public login(username: string, password: string) {
+		this.http
+			.post<IAuthenticationResponse>("api/users/login", { username: username, password: password })
+			.map((result, index) => {
+				console.log(result.auth_token);
+				localStorage.setItem("auth_token", result.auth_token);
+				return true;
+			})
+			.catch(error => error)
+			.subscribe(result => {
+				if (result) {
+					this.router.navigate(["/home"]);
+				}
+			});
 	}
 
-	private loggedIn: boolean;
 	public isLoggedIn(): boolean {
-		return this.loggedIn;
+		return !!localStorage.getItem("auth_token");
 	}
 
+	public logout() {
+		localStorage.removeItem("auth_token");
+		this.router.navigate(["/home"]);
+	}
+}
+
+export interface IAuthenticationResponse {
+	id: string;
+	auth_token: string;
 }

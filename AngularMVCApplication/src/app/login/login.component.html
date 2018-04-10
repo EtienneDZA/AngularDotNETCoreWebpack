@@ -1,38 +1,27 @@
-﻿<div class="row">
-	<div class="col-md-6 new-user-alert">
-		<div *ngIf="brandNew" class="alert alert-success" role="alert">
-			<strong>All set!</strong> Please login with your account
+﻿<div class="col-md-6 col-md-offset-3">
+	<h2>Login</h2>
+	<form #f="ngForm" novalidate (ngSubmit)="login()">
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input id="username" type="text" required name="userName" class="form-control" placeholder="Username"
+				   [(ngModel)]="loginModel.userName" #username="ngModel" tmFocus validateEmail>
+			<small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>
 		</div>
-		<h2>Login</h2>
-	</div>
-</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" required name="password" placeholder="Password" [(ngModel)]="loginModel.password">
+		</div>
 
-<div class="row">
-	<div class="col-md-6">
-		<form #f="ngForm" novalidate (ngSubmit)="login()">
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Login</button>
+			<!--<app-spinner [isRunning]="isRequesting"></app-spinner>-->
+		</div>
 
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input id="username" type="text" required name="userName" class="form-control" placeholder="Username" 
-					   [(ngModel)]="loginModel.userName" #username="ngModel" tmFocus validateEmail>
-				<!--<small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>-->
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" class="form-control" id="password" required name="password" placeholder="Password" [(ngModel)]="loginModel.password">
-			</div>
+		<div *ngIf="errors" class="alert alert-danger" role="alert">
+			<strong>Oops!</strong> {{errors}}
+		</div>
 
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Login</button>
-				<!--<app-spinner [isRunning]="isRequesting"></app-spinner>-->
-			</div>
-
-			<div *ngIf="errors" class="alert alert-danger" role="alert">
-				<strong>Oops!</strong> {{errors}}
-			</div>
-
-		</form>
-	</div>
+	</form>
 </div>
 
 
