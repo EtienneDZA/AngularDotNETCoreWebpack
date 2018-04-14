@@ -26,7 +26,9 @@ export class AttorneyService {
 
 	// delay this
 	getAttorneys() {
-		return Observable.of(ATTORNEYS);
+		return Observable
+			.of(ATTORNEYS)
+			.delay(2000);
 	}
 	
 

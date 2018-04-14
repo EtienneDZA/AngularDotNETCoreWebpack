@@ -2,20 +2,36 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
+import { AttorneyListComponent } from './attorneys/attorney-list.component';
 import { LoginComponent } from './login/login.component';
+
+import { AttorneysModule } from './attorneys/attorneys.module';
 
 import { AuthGuard } from "./auth-guard.service";
 
 export const routes: Routes = [
-	{ path: '', redirectTo: 'home', pathMatch: 'full' },
-	//{ path: '', loadChildren: "./home/home.module" },
+	{ path: '', redirectTo: 'login', pathMatch: 'full' },
+	{ path: 'login', component: LoginComponent },
+	{
+		path: 'home',
+		component: HomeComponent,
+		canActivate: [AuthGuard],
+		children: [
+			{
+				path: 'attorneys',
+				loadChildren: './attorneys/attorneys.module#AttorneysModule',
+				//component: AttorneyListComponent,
+			},
+		]
+	},
+	{ path: '**', redirectTo: '' }
 
 	// try child routes, https://stackoverflow.com/questions/40991269/angular2-login-and-subsequent-routing?rq=1
-	{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-	{ path: 'admin', component: AdminComponent },
-	{ path: 'login', component: LoginComponent },
-    { path: '**', redirectTo: '' }
+	// https://angular-2-training-book.rangle.io/handout/modules/lazy-loading-module.html
+	// https://stackoverflow.com/questions/40110827/angular2-router-how-to-correctly-load-children-modules-with-their-own-routing-r
+
+///	https://stackoverflow.com/questions/38644105/routing-issues-after-login
+	
 ];
 
 @NgModule({
@@ -23,8 +39,8 @@ export const routes: Routes = [
 		routes,
 		{ enableTracing: true }
 	)],
-	providers: [AuthGuard],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [AuthGuard]
 })
 
 export class AppRoutingModule { }
