@@ -1,5 +1,6 @@
 ﻿import { NgModule } from "@angular/core";
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AttorneysRoutingModule } from "./attorneys.routing.module";
 
@@ -12,6 +13,7 @@ import { AttorneyService } from "./attorney.service";
 @NgModule({
 	imports: [
 		FormsModule,
+		CommonModule,
 		AttorneysRoutingModule,
 	],
 	declarations: [

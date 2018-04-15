@@ -1,18 +1,26 @@
 ﻿import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from "@angular/router";
 
-import { AttorneysComponent } from './attorneys.component';
-import { AttorneyListComponent } from './attorney-list.component';
-import { AttorneyDetailComponent } from './attorney-detail.component';
+import { AttorneysComponent } from "./attorneys.component";
+import { AttorneyListComponent } from "./attorney-list.component";
+import { AttorneyDetailComponent } from "./attorney-detail.component";
+
+import { AuthGuard } from "../auth-guard.service";
+
+import { AttorneyResolver } from "./attorneys-list-resolver.service";
 
 export const routes: Routes = [
 	{
 		path: '',
 		component: AttorneysComponent,
+		canActivate: [AuthGuard],
 		children: [
 			{
 				path: '',
 				component: AttorneyListComponent,
+				resolve: {
+					attorneys: AttorneyResolver
+				},
 				children: [
 					{
 						path: 'attorney/:id',
@@ -30,8 +38,7 @@ export const routes: Routes = [
 		RouterModule.forChild(routes)
 	],
 	exports: [RouterModule],
-	declarations: [],
-	providers: []
+	providers: [AuthGuard, AttorneyResolver]
 })
 
 export class AttorneysRoutingModule {

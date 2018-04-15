@@ -12,6 +12,8 @@ export class AuthenticationService {
 	constructor(private http: HttpClient, private router: Router) {
 	}
 
+	redirectUrl: string;
+
 	public login(username: string, password: string) {
 		this.http
 			.post<IAuthenticationResponse>("api/users/login", { username: username, password: password })

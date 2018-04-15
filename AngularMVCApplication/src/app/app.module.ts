@@ -3,23 +3,20 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 
-import { AppComponent } from "./app/app.component";
-import { HomeComponent } from "./home/home.component";
-
 import { AppRoutingModule } from "./app-routing.module";
 
+import { AppComponent } from "./app/app.component";
+import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from './login/login.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
+import { AppHeaderComponent } from './header/header.component';
 
 import { AuthenticationService } from "./shared/services/auth-service"
-
-import { AttorneysModule } from './attorneys/attorneys.module';
 
 @NgModule({
 	imports: [
 		BrowserModule,
 		HttpClientModule,
-		AttorneysModule,
 		AppRoutingModule,
 		FormsModule
 	],
@@ -27,11 +24,10 @@ import { AttorneysModule } from './attorneys/attorneys.module';
 		AppComponent,
 		HomeComponent,
 		NavMenuComponent,
-		LoginComponent
+		LoginComponent,
+		AppHeaderComponent
 	],
 	bootstrap: [AppComponent],
 	providers: [AuthenticationService]
 })
-export class AppModule {
-
-}
+export class AppModule { }

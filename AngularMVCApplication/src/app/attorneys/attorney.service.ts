@@ -28,7 +28,8 @@ export class AttorneyService {
 	getAttorneys() {
 		return Observable
 			.of(ATTORNEYS)
-			.delay(2000);
+			//.delay(1000)
+			;
 	}
 	
 

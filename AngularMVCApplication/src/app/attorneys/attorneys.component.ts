@@ -6,4 +6,5 @@
 		<router-outlet></router-outlet>
 	`
 })
-export class AttorneysComponent { }
+export class AttorneysComponent { 
+}

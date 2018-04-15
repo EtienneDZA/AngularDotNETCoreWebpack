@@ -1,1 +1,10 @@
-﻿<h2>This is the attorneys list</h2>
+﻿<div>
+	<h2>This is the attorneys list</h2>
+	<div>
+		<ul>
+			<li *ngFor="let attorney of attorneys">	
+				{{attorney.name}}
+			</li>
+		</ul>
+	</div>
+</div>
