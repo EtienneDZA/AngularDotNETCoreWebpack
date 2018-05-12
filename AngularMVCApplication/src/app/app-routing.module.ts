@@ -19,6 +19,7 @@ export const routes: Routes = [
 		children: [
 			{
 				path: 'attorneys',
+				canActivate: [AuthGuard],
 				loadChildren: './attorneys/attorneys.module#AttorneysModule',
 			},
 		]

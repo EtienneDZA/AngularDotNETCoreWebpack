@@ -18,7 +18,6 @@ export class AuthenticationService {
 		this.http
 			.post<IAuthenticationResponse>("api/users/login", { username: username, password: password })
 			.map((result, index) => {
-				console.log(result.auth_token);
 				localStorage.setItem("auth_token", result.auth_token);
 				return true;
 			})
@@ -31,6 +30,7 @@ export class AuthenticationService {
 	}
 
 	public isLoggedIn(): boolean {
+		console.log(localStorage.getItem("auth_token"));
 		return !!localStorage.getItem("auth_token");
 	}
 
