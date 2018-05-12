@@ -20,14 +20,11 @@ export const routes: Routes = [
 				component: AttorneyListComponent,
 				resolve: {
 					attorneys: AttorneyResolver
-				},
-				children: [
-					{
-						path: 'attorney/:id',
-						component: AttorneyDetailComponent
-					}
-				]
-				
+				}
+			},
+			{
+				path: ':id',
+				component: AttorneyDetailComponent
 			}
 		]
 	}

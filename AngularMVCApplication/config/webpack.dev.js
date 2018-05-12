@@ -49,7 +49,6 @@ module.exports = webpackMerge(commonConfig, {
 			{ test: /\.ts$/, use: ['awesome-typescript-loader','angular-router-loader','angular2-template-loader','source-map-loader','tslint-loader'] },
 			{ test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/, use: 'file-loader?name=assets/[name]-[hash:6].[ext]' },
 			{ test: /favicon.ico$/, use: 'file-loader?name=/[name].[ext]' },
-			//{ test: /\.css$/, use: ['to-string-loader', 'style-loader', 'css-loader'] },
 			{
 				test: /\.css(\?|$)/, 
 				loaders: ['to-string-loader'].concat(ExtractTextPlugin.extract({
@@ -64,7 +63,13 @@ module.exports = webpackMerge(commonConfig, {
 					use: ['css-loader', 'less-loader']
 				}))
 			},
-			//{ test: /\.less$/, use: [ "style-loader", "css-loader", "less-loader" ] },
+			{
+				test: /\.scss$/,
+				loaders: ['to-string-loader'].concat(ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use: ['css-loader', 'sass-loader']
+				}))
+			},
 			{ test: /\.html$/, use: 'raw-loader' }
 		],
 		exprContextCritical: false

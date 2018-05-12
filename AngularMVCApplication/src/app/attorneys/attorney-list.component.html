@@ -2,8 +2,10 @@
 	<h2>This is the attorneys list</h2>
 	<div>
 		<ul>
-			<li *ngFor="let attorney of attorneys">	
-				{{attorney.name}}
+			<li *ngFor="let attorney of attorneys">
+				<a [routerLink]="[attorney.id]">
+					<span class="badge">{{attorney.id}}</span>{{attorney.name}}
+				</a>
 			</li>
 		</ul>
 	</div>
