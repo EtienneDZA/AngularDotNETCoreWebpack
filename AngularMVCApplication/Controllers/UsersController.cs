@@ -37,7 +37,7 @@ namespace AngularMVCApplication.Controllers
 			var identity = await GetClaimsIdentity(model.UserName, model.Password);
 			if (identity == null)
 			{
-				//return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
+				return BadRequest(ModelState.TryAddModelError("login_failure", "Invalid username or password."));
 			}
 
 			var jwt = await GenerateJwt(identity, _jwtFactory, model.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });

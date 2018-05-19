@@ -15,17 +15,11 @@ export class AuthenticationService {
 	redirectUrl: string;
 
 	public login(username: string, password: string) {
-		this.http
+		return this.http
 			.post<IAuthenticationResponse>("api/users/login", { username: username, password: password })
-			.map((result, index) => {
+			.map((result) => {
 				localStorage.setItem("auth_token", result.auth_token);
 				return true;
-			})
-			.catch(error => error)
-			.subscribe(result => {
-				if (result) {
-					this.router.navigate(["/home"]);
-				}
 			});
 	}
 

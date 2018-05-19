@@ -1,11 +1,10 @@
 ﻿<div class="form-signin">
+
 	<h2>Login</h2>
 	<form #f="ngForm" novalidate (ngSubmit)="login()">
 		<div class="form-group">
-			<label for="email">Email</label>
-			<input id="username" type="text" required name="userName" class="form-control" placeholder="Username"
-				   [(ngModel)]="loginModel.userName" #username="ngModel" tmFocus validateEmail>
-			<small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>
+			<label for="username">Email</label>
+			<input id="username" type="text" required name="username" class="form-control" placeholder="Email" [(ngModel)]="loginModel.userName" ngModel>
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>
@@ -14,10 +13,6 @@
 
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Login</button>
-		</div>
-
-		<div *ngIf="errors" class="alert alert-danger" role="alert">
-			<strong>Oops!</strong> {{errors}}
 		</div>
 	</form>
 
