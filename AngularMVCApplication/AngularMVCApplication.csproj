@@ -43,7 +43,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="e2e\" />
-    <Folder Include="src\app\app\" />
     <Folder Include="src\app\users\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

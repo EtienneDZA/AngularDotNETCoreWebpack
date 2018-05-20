@@ -14,6 +14,8 @@ import { AppHeaderComponent } from './header/header.component';
 
 import { AuthenticationService } from "./shared/services/auth-service"
 
+import { AppMaterialModule } from "./app.material.module";
+
 @NgModule({
 	imports: [
 		BrowserModule,

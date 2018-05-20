@@ -87,7 +87,9 @@
 		"to-string-loader": "1.1.5",
 		"less": "^3.0.1",
 		"less-loader": "^4.1.0",
-		"feather-icons": "^4.7.0"
+		"feather-icons": "^4.7.0",
+		"@angular/material": "5.2.4",
+		"@angular/cdk": "5.2.4"
 	},
 		"-vs-binding": {
 				"ProjectOpened": [
