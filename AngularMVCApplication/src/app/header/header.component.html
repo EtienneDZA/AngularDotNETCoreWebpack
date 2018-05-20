@@ -3,8 +3,8 @@
 		<a class="navbar-brand" href="#">Admin App</a>
 		<ul class="navbar-nav px-3">
 			<li class="nav-item text-nowrap">
-				<a class="nav-link" href="#" (click)="logout()">Sign out</a>
+				<a *ngIf="isLoggedIn()" class="nav-link" href="#" (click)="logout()">Sign out</a>
 			</li>
 		</ul>
 	</nav>
-</header>	
+</header>		

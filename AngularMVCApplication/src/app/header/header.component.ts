@@ -18,4 +18,8 @@ export class AppHeaderComponent {
 		this.authService.logout();
 	}
 
+	public isLoggedIn(): boolean {
+		return this.authService.isLoggedIn();
+	}
+
 }
