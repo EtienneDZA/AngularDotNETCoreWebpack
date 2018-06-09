@@ -33,7 +33,7 @@ namespace AngularMVCApplication
 				audience: _jwtOptions.Audience,
 				claims: claims,
 				notBefore: DateTime.UtcNow,
-				expires: DateTime.Now.Add(TimeSpan.FromSeconds(3)),
+				expires: DateTime.Now.Add(TimeSpan.FromMinutes(1)),
 				signingCredentials: _jwtOptions.SigningCredentials);
 
 			var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);

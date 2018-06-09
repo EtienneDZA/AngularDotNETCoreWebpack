@@ -1,43 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdminApplication;
-using AdminApplication.Data;
-using AdminApplication.Data.Models;
+﻿using AdminApplication.Data;
 using AdminApplication.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Text;
 
 namespace AngularMVCApplication
 {
-    public class Startup
-    {
+	public class Startup
+	{
 		private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
 		private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
 
 		public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+		{
+			Configuration = configuration;
+		}
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-			services.AddDbContext<AdminAppDbContext>(opts => 
-				opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), 
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			services.AddDbContext<AdminAppDbContext>(opts =>
+				opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
 				b => b.MigrationsAssembly("AdminApplication.Data")));
 
 			services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -78,9 +70,8 @@ namespace AngularMVCApplication
 			});
 
 			services.AddSingleton<IJwtTokenFactory, JwtTokenFactory>();
-
 		}
-			
+
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 		{
@@ -104,5 +95,5 @@ namespace AngularMVCApplication
 			.UseDefaultFiles()
 			.UseStaticFiles();
 		}
-    }
+	}
 }

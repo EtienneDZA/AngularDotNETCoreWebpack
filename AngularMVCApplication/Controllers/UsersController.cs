@@ -50,7 +50,7 @@ namespace AngularMVCApplication.Controllers
 			{
 				id = identity.Claims.Single(c => c.Type == "id").Value,
 				auth_token = await Task.FromResult(jwtFactory.GenerateEncodedToken(userName, identity)),
-				expires_in = TimeSpan.FromSeconds(3).TotalSeconds
+				expires_in = (int)TimeSpan.FromMinutes(1).TotalSeconds
 			};
 
 			return JsonConvert.SerializeObject(response, serializerSettings);
