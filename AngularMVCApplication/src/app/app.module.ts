@@ -14,8 +14,6 @@ import { AppHeaderComponent } from './header/header.component';
 
 import { AuthenticationService } from "./shared/services/auth-service"
 
-import { AppMaterialModule } from "./app.material.module";
-
 @NgModule({
 	imports: [
 		BrowserModule,
@@ -23,7 +21,6 @@ import { AppMaterialModule } from "./app.material.module";
 		AppRoutingModule,
 		FormsModule,
 		BrowserAnimationsModule,
-		AppMaterialModule
 	],
 	declarations: [
 		AppComponent,
