@@ -22,7 +22,8 @@ import { AppMaterialModule } from "./app.material.module";
 		HttpClientModule,
 		AppRoutingModule,
 		FormsModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		AppMaterialModule
 	],
 	declarations: [
 		AppComponent,

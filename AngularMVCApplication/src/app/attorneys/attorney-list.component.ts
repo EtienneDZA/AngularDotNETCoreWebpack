@@ -4,7 +4,8 @@ import { AttorneyService, Attorney } from './attorney.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-	templateUrl: "./attorney-list.component.html"
+	templateUrl: "./attorney-list.component.html",
+	styleUrls: ["./attorney-list.component.scss"]
 })
 
 export class AttorneyListComponent {

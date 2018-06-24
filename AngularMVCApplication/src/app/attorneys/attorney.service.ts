@@ -4,12 +4,16 @@ import 'rxjs/add/operator/delay';
 
 export class Attorney {
 	constructor(id: number, name: string) {
-		this.id = id;
-		this.name = name;
+		this.ID = id;
+		this.Name = name;
 	}
 
-	id: number;
-	name: string;
+	ID: number;
+	Name: string;
+	Kref: string;
+	LUN: string;
+	DebtorCode: string;
+	Branch: string;
 }
 
 const ATTORNEYS = [
@@ -24,8 +28,7 @@ const ATTORNEYS = [
 export class AttorneyService {
 
 
-	// delay this
-	getAttorneys() {
+	getAttorneys(): Observable<Attorney[]> {
 		return Observable
 			.of(ATTORNEYS)
 			//.delay(1000)

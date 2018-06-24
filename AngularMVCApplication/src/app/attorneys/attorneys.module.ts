@@ -10,11 +10,14 @@ import { AttorneyDetailComponent } from "./attorney-detail.component";
 
 import { AttorneyService } from "./attorney.service";
 
+import { AppMaterialModule } from "../app.material.module";
+
 @NgModule({
 	imports: [
 		FormsModule,
 		CommonModule,
 		AttorneysRoutingModule,
+		AppMaterialModule
 	],
 	declarations: [
 		AttorneysComponent,
