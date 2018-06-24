@@ -3,27 +3,16 @@
 
 	<mat-accordion>
 
-		<mat-expansion-panel>
+		<mat-expansion-panel *ngFor="let attorney of attorneys">
 			<mat-expansion-panel-header>
-				This is the expansion 1 title
+				{{attorney.Name}}
 			</mat-expansion-panel-header>
-
-			This the expansion 1 content
-
-		</mat-expansion-panel>
-
-		<mat-expansion-panel>
-			<mat-expansion-panel-header>
-				This is the expansion 2 title
-			</mat-expansion-panel-header>
-
-			This the expansion 2 content
-
+			<attorneyDetail [attorney]="attorney"></attorneyDetail>
 		</mat-expansion-panel>
 
 	</mat-accordion>
 
-	<div class="table-responsive ">
+	<!--<div class="table-responsive ">
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr>
@@ -94,6 +83,6 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
+	</div>-->
 
 </div>
